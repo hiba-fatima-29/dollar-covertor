@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page settings -->
+  <meta charset="UTF-8">
+  <!-- This line makes the website fit nicely on mobile phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dollar Converter</title>
+  <meta name="description" content="Convert US Dollars to other currencies with live exchange rates.">
+  <!-- Link to our design file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER (top of the page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">💱 Dollar Converter</h1>
+      <p class="tagline">Live exchange rates, updated daily</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
+
+    <!-- The main converter box -->
+    <section class="card converter">
+
+      <!-- Amount input -->
+      <label for="amount" class="label">Amount</label>
+      <input type="number" id="amount" class="amount-input" value="1" min="0" step="any" inputmode="decimal">
+
+      <!-- From / Swap / To row -->
+      <div class="currency-row">
+        <div class="select-group">
+          <label for="from-currency" class="label">From</label>
+          <select id="from-currency"></select>
+        </div>
+
+        <!-- Swap button -->
+        <button id="swap-btn" class="swap-btn" type="button" title="Swap currencies" aria-label="Swap currencies">⇄</button>
+
+        <div class="select-group">
+          <label for="to-currency" class="label">To</label>
+          <select id="to-currency"></select>
+        </div>
+      </div>
+
+      <!-- The result is shown here -->
+      <div class="result-box">
+        <p id="result-from" class="result-from">Loading rates…</p>
+        <p id="result-to" class="result-to"></p>
+        <p id="result-rate" class="result-rate"></p>
+      </div>
+
+      <!-- Friendly error message (hidden unless something goes wrong) -->
+      <div id="error-box" class="error-box" hidden>
+        <p>😕 Sorry, we couldn't load the latest exchange rates.
+           Please check your internet connection and try again.</p>
+        <button id="retry-btn" class="retry-btn" type="button">Try again</button>
+      </div>
+
+      <!-- When the rates were last updated -->
+      <p id="last-updated" class="last-updated"></p>
+    </section>
+
+    <!-- List of popular conversions -->
+    <section class="card">
+      <h2 id="popular-title" class="section-title">Popular conversions</h2>
+      <ul id="popular-list" class="popular-list"></ul>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (bottom of the page) ===== -->
+  <footer class="site-footer">
+    <p>© 2026 Dollar Converter · Rates by
+      <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API</a></p>
+    <p class="small">Rates are for information only.</p>
+  </footer>
+
+  <!-- Link to our JavaScript file (the "brain" of the website) -->
+  <script src="script.js"></script>
+</body>
+</html>

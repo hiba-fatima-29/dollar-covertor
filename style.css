@@ -1,0 +1,278 @@
+/* ===== COLORS (change these to change the whole theme) ===== */
+:root {
+  --primary: #0f766e;        /* main teal color */
+  --primary-dark: #115e59;   /* darker teal for hover */
+  --accent: #f59e0b;         /* gold accent */
+  --bg: #f1f5f9;             /* page background */
+  --card: #ffffff;           /* box background */
+  --text: #0f172a;           /* main text color */
+  --muted: #64748b;          /* grey text */
+  --border: #e2e8f0;         /* light lines */
+  --error-bg: #fef2f2;
+  --error-text: #b91c1c;
+}
+
+/* ===== BASIC RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keeps content centered and not too wide */
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background: linear-gradient(135deg, var(--primary), #134e4a);
+  color: #fff;
+  padding: 28px 0 70px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+
+.tagline {
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* ===== MAIN AREA ===== */
+main {
+  flex: 1;
+  margin-top: -50px;   /* pulls the card up over the header */
+}
+
+/* White boxes */
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* Amount input box */
+.amount-input {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+.amount-input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* From - Swap - To row */
+.currency-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.select-group {
+  flex: 1;
+  min-width: 0;   /* stops long names from breaking the layout */
+}
+
+select {
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px 10px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Round swap button */
+.swap-btn {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.2s;
+}
+
+.swap-btn:hover {
+  background: #d97706;
+  transform: rotate(180deg);
+}
+
+/* Result area */
+.result-box {
+  margin-top: 22px;
+  padding: 18px;
+  background: #f0fdfa;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.result-from {
+  color: var(--muted);
+}
+
+.result-to {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  word-break: break-word;
+}
+
+.result-rate {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Error message */
+.error-box {
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--error-bg);
+  color: var(--error-text);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.retry-btn {
+  margin-top: 10px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--error-text);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.last-updated {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ===== POPULAR LIST ===== */
+.section-title {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.popular-list {
+  list-style: none;
+}
+
+.popular-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.popular-list li:last-child {
+  border-bottom: none;
+}
+
+.currency-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.flag {
+  font-size: 1.6rem;
+}
+
+.code {
+  font-weight: 700;
+}
+
+.name {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.value {
+  font-weight: 700;
+  color: var(--primary);
+  text-align: right;
+  word-break: break-word;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 20px 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--primary);
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+/* ===== MOBILE PHONES (small screens) ===== */
+@media (max-width: 480px) {
+  .logo { font-size: 1.5rem; }
+  .card { padding: 18px; }
+  .result-to { font-size: 1.6rem; }
+
+  /* Stack From / Swap / To on top of each other */
+  .currency-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .swap-btn {
+    align-self: center;
+    transform: rotate(90deg);
+  }
+  .swap-btn:hover {
+    transform: rotate(270deg);
+  }
+}
