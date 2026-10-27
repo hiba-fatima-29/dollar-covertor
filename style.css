@@ -251,6 +251,12 @@ select {
 
 .site-footer a {
   color: var(--primary);
+  overflow-wrap: anywhere;   /* lets the long email address wrap on small phones */
+}
+
+/* Small space between the footer lines */
+.site-footer p {
+  margin-bottom: 4px;
 }
 
 .small {
